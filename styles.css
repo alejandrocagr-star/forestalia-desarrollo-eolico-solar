@@ -1,0 +1,480 @@
+
+/* =========================================
+   FORESTALIA - GAMIFICACIÓN COMPLIANCE
+   DESARROLLO EÓLICO Y SOLAR
+========================================= */
+
+/* CONFIGURACIÓN GENERAL */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f3f6f4;
+  color: #24352c;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================================
+   CABECERA Y LOGOTIPO
+========================================= */
+
+.cabecera {
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 4px solid #78ad35;
+  padding: 18px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 210px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.subtitulo {
+  color: #367b39;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  text-align: right;
+}
+
+/* =========================================
+   CONTENIDO PRINCIPAL
+========================================= */
+
+main {
+  width: 100%;
+  max-width: 1050px;
+  margin: auto;
+  padding: 45px 25px;
+  flex: 1;
+}
+
+/* =========================================
+   PANTALLA DE BIENVENIDA
+========================================= */
+
+.bienvenida {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 60px 45px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  border-top: 6px solid #78ad35;
+}
+
+.bienvenida h1 {
+  font-size: 40px;
+  color: #286d37;
+  margin-top: 0;
+  margin-bottom: 15px;
+  line-height: 1.25;
+}
+
+.bienvenida h2 {
+  font-size: 28px;
+  color: #24352c;
+  margin-bottom: 28px;
+}
+
+.bienvenida p {
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 720px;
+  margin: 0 auto 22px;
+}
+
+.bienvenida button {
+  margin-top: 20px;
+}
+
+/* =========================================
+   BOTONES GENERALES
+========================================= */
+
+button {
+  background: #367b39;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 16px 28px;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+button:hover:not(:disabled) {
+  background: #245c2d;
+  transform: translateY(-2px);
+}
+
+button:focus-visible {
+  outline: 3px solid #78ad35;
+  outline-offset: 3px;
+}
+
+button:disabled {
+  background: #aeb8ae;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* =========================================
+   TARJETAS DE CASOS PRÁCTICOS
+========================================= */
+
+.tarjeta {
+  background: #ffffff;
+  padding: 38px;
+  border-radius: 18px;
+  border-top: 6px solid #78ad35;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+}
+
+.progreso {
+  display: inline-block;
+  background: #e9f3e3;
+  color: #286d37;
+  padding: 10px 16px;
+  border-radius: 20px;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+}
+
+.tarjeta h2 {
+  color: #286d37;
+  font-size: 30px;
+  line-height: 1.35;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.tarjeta h3 {
+  font-size: 21px;
+  color: #24352c;
+  margin-top: 25px;
+  margin-bottom: 20px;
+}
+
+.situacion {
+  background: #f6f9f5;
+  border-left: 5px solid #78ad35;
+  padding: 23px;
+  border-radius: 8px;
+  font-size: 19px;
+  line-height: 1.7;
+  margin: 22px 0;
+}
+
+/* =========================================
+   OPCIONES DE RESPUESTA
+========================================= */
+
+.opciones {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin: 28px 0;
+}
+
+.opcion {
+  display: block;
+  width: 100%;
+  background: #f6f9f5;
+  color: #263b2c;
+  border: 2px solid #dce6d9;
+  border-radius: 12px;
+  padding: 20px 22px;
+  text-align: left;
+  font-size: 17px;
+  font-weight: normal;
+  line-height: 1.5;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.opcion strong {
+  color: #286d37;
+  font-size: 19px;
+  margin-right: 8px;
+}
+
+.opcion:hover:not(:disabled) {
+  background: #eaf3e5;
+  border-color: #78ad35;
+  transform: translateX(3px);
+}
+
+.opcion.seleccionada {
+  background: #e1efd9;
+  border-color: #367b39;
+  box-shadow: 0 0 0 1px #367b39;
+  font-weight: bold;
+}
+
+.opcion:disabled {
+  cursor: default;
+  opacity: 1;
+}
+
+.opcion:disabled:hover {
+  transform: none;
+}
+
+#comprobar {
+  display: block;
+  margin: 25px auto 0;
+  min-width: 240px;
+}
+
+/* =========================================
+   RESOLUCIÓN Y EXPLICACIONES
+========================================= */
+
+.resolucion {
+  background: #f0f7ed;
+  border-left: 5px solid #367b39;
+  border-radius: 12px;
+  padding: 28px;
+  margin-top: 32px;
+}
+
+.resolucion h3 {
+  color: #286d37;
+  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.resolucion > p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.explicacion {
+  background: #ffffff;
+  padding: 17px 20px;
+  margin: 12px 0;
+  border-radius: 10px;
+  border: 1px solid #d5e3d1;
+  line-height: 1.6;
+}
+
+.explicacion p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.correcta {
+  color: #28723b;
+  font-weight: bold;
+}
+
+.incorrecta {
+  color: #a33d32;
+  font-weight: bold;
+}
+
+#siguiente {
+  display: block;
+  margin: 25px auto 0;
+  min-width: 220px;
+}
+
+/* =========================================
+   RESULTADO FINAL
+========================================= */
+
+.resultado {
+  text-align: center;
+  padding: 60px 40px;
+}
+
+.resultado h1 {
+  font-size: 38px;
+  color: #286d37;
+  margin-bottom: 20px;
+}
+
+.resultado h2 {
+  font-size: 25px;
+  color: #24352c;
+}
+
+.puntuacion {
+  font-size: 65px;
+  color: #367b39;
+  font-weight: bold;
+  margin: 30px 0;
+}
+
+.resultado .situacion {
+  max-width: 700px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+#reiniciar {
+  margin-top: 20px;
+}
+
+/* =========================================
+   PIE DE PÁGINA
+========================================= */
+
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 22px;
+  background: #e8eee7;
+  color: #66736a;
+  font-size: 13px;
+  border-top: 1px solid #dce6d9;
+}
+
+/* =========================================
+   ADAPTACIÓN A TABLETS
+========================================= */
+
+@media (max-width: 900px) {
+
+  main {
+    padding: 30px 20px;
+  }
+
+  .bienvenida {
+    padding: 45px 30px;
+  }
+
+  .tarjeta {
+    padding: 30px;
+  }
+
+  .logo {
+    width: 185px;
+  }
+}
+
+/* =========================================
+   ADAPTACIÓN A MÓVILES
+========================================= */
+
+@media (max-width: 650px) {
+
+  .cabecera {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 18px 15px;
+    gap: 12px;
+  }
+
+  .logo {
+    width: 170px;
+  }
+
+  .subtitulo {
+    font-size: 12px;
+    text-align: center;
+  }
+
+  main {
+    padding: 20px 12px;
+  }
+
+  .bienvenida,
+  .tarjeta {
+    padding: 28px 20px;
+  }
+
+  .bienvenida h1 {
+    font-size: 29px;
+  }
+
+  .bienvenida h2 {
+    font-size: 23px;
+  }
+
+  .bienvenida p {
+    font-size: 16px;
+  }
+
+  .tarjeta h2 {
+    font-size: 24px;
+  }
+
+  .tarjeta h3 {
+    font-size: 19px;
+  }
+
+  .situacion {
+    font-size: 16px;
+    padding: 17px;
+  }
+
+  .opcion {
+    font-size: 16px;
+    padding: 16px;
+  }
+
+  .resolucion {
+    padding: 20px 15px;
+  }
+
+  .resolucion h3 {
+    font-size: 21px;
+  }
+
+  .explicacion {
+    padding: 15px;
+  }
+
+  .resultado {
+    padding: 35px 20px;
+  }
+
+  .resultado h1 {
+    font-size: 29px;
+  }
+
+  .puntuacion {
+    font-size: 50px;
+  }
+
+  button {
+    font-size: 15px;
+    padding: 15px 20px;
+  }
+
+  footer {
+    font-size: 12px;
+    padding: 18px 12px;
+  }
+}
